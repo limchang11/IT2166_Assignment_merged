@@ -14,6 +14,7 @@
                 <div class="col-md-6">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
+                        <br />
                         <label asp-for="FullName" class="control-label"></label>
                         <input asp-for="FullName" class="form-control" />
                         <span asp-validation-for="FullName" class="text-danger"></span>
@@ -22,66 +23,84 @@
 
                 <div class="col-md-6">
                     <div class="form-group">
+                        <br />
                         <label asp-for="Email" class="control-label"></label>
-                        <input asp-for="Email" class="form-control" />
+                        <input type="email" asp-for="Email" class="form-control" />
                         <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6">
                     <div class="form-group">
+                        <br />
                         <label asp-for="NRIC" class="control-label"></label>
                         <input asp-for="NRIC" class="form-control" />
                         <span asp-validation-for="NRIC" class="text-danger"></span>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6">
                     <div class="form-group">
+                        <br />
                         <label asp-for="Gender" class="control-label"></label>
-                        <input asp-for="Gender" class="form-control" />
+                        <select asp-for="Gender" class="form-control">
+                            <option value="">Please select your gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
                         <span asp-validation-for="Gender" class="text-danger"></span>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6">
                     <div class="form-group">
+                        <br />
                         <label asp-for="MaritalStatus" class="control-label"></label>
-                        <input asp-for="MaritalStatus" class="form-control" />
+                        <select asp-for="MaritalStatus" class="form-control">
+                            <option value="">Please select your Marital Status</option>
+                            <option value="Married">1 - Married</option>
+                            <option value="Widowed">2 - Widowed</option>
+                            <option value="Separated">3 - Separated</option>
+                            <option value="Divorced">4 - Divorced</option>
+                            <option value="Single">5 - Single</option>
+                        </select>
                         <span asp-validation-for="MaritalStatus" class="text-danger"></span>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6">
                     <div class="form-group">
+                        <br />
                         <label asp-for="Address" class="control-label"></label>
                         <input asp-for="Address" class="form-control" />
                         <span asp-validation-for="Address" class="text-danger"></span>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label asp-for="DOB" class="control-label"></label>
-                        <input asp-for="DOB" class="form-control" />
+                        <br />
+                        <label asp-for="DOB" class="control-label">Date Of Birth</label>
+                        <input type="date" asp-for="DOB" class="form-control" />
                         <span asp-validation-for="DOB" class="text-danger"></span>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6">
                     <div class="form-group">
+                        <br />
                         <label asp-for="ContactNo" class="control-label"></label>
                         <input asp-for="ContactNo" class="form-control" />
                         <span asp-validation-for="ContactNo" class="text-danger"></span>
                     </div>
                 </div>
-                
+
                 <div class="col-12 btn-group">
                     <div class="col-6 form-group text-right p-2">
                         <a asp-action="Index" class="btn btn-secondary">&nbsp;Back&nbsp;</a>
                     </div>
                     <div class="col-6 form-group text-left p-2">
-                        <input type="submit" value="Create" class="btn btn-primary"/>
+                        <input type="submit" value="Create" class="btn btn-primary" />
                     </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
-﻿using IT2166_Assignment.ViewModels;
+﻿using IT2166_Assignment.Models;
+using IT2166_Assignment.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -13,12 +14,15 @@ namespace IT2166_Assignment.Controllers
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly AppDBContext _context;
 
         public AccountController(UserManager<IdentityUser> userManager,
-                                      SignInManager<IdentityUser> signInManager)
+                                      SignInManager<IdentityUser> signInManager,
+                                      AppDBContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -123,6 +127,48 @@ namespace IT2166_Assignment.Controllers
 
                 await _signInManager.RefreshSignInAsync(user);
                 return View("ChangePasswordConfirmation");
+            }
+            return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> EditAccount()
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.GetUserAsync(User);
+                if (user != null)
+                {
+                    EditAccountViewModel model = new EditAccountViewModel()
+                    {
+                        Email = user.Email,
+                    };
+                    return View(model);
+                }
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditAccount(EditAccountViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.GetUserAsync(User);
+                if (user != null)
+                {
+                    user.Email = model.Email;
+                    IdentityResult result = await _userManager.UpdateAsync(user);
+
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
+                    foreach (IdentityError error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+                }
             }
             return View(model);
         }

@@ -9,7 +9,7 @@
         <div class="card-header bg-success text-uppercase text-white" style="height:45px">
             <h4>View Booking</h4>
         </div>
-        <form enctype="multipart/form-data" asp-action="Create">
+        <form enctype="multipart/form-data" asp-action="Details">
             <div class="row">
                 <div class="col-md-6">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -27,7 +27,7 @@
                         <input asp-for="Email" class="form-control-plaintext" readonly />
                     </div>
                 </div>
-                
+
                 <div class="col-md-6">
                     <div class="form-group">
                         <br />
@@ -35,7 +35,7 @@
                         <input asp-for="NRIC" class="form-control-plaintext" readonly />
                     </div>
                 </div>
-                
+
                 <div class="col-md-6">
                     <div class="form-group">
                         <br />
@@ -43,7 +43,7 @@
                         <input asp-for="Gender" class="form-control-plaintext" readonly />
                     </div>
                 </div>
-                
+
                 <div class="col-md-6">
                     <div class="form-group">
                         <br />
@@ -51,7 +51,7 @@
                         <input asp-for="MaritalStatus" class="form-control-plaintext" readonly />
                     </div>
                 </div>
-                
+
                 <div class="col-md-6">
                     <div class="form-group">
                         <br />
@@ -59,7 +59,7 @@
                         <input asp-for="Address" class="form-control-plaintext" readonly />
                     </div>
                 </div>
-                
+
                 <div class="col-md-6">
                     <div class="form-group">
                         <br />
@@ -67,7 +67,7 @@
                         <input asp-for="DOB" class="form-control-plaintext" readonly />
                     </div>
                 </div>
-                
+
                 <div class="col-md-6">
                     <div class="form-group">
                         <br />
@@ -75,7 +75,7 @@
                         <input asp-for="ContactNo" class="form-control-plaintext" readonly />
                     </div>
                 </div>
-                
+
                 <div class="col-12">
                     <div class="col-6 form-group text-right p-2">
                         <a asp-action="Index" class="btn btn-secondary">&nbsp;Back&nbsp;</a>
