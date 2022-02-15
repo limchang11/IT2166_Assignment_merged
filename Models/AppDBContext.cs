@@ -25,5 +25,7 @@ namespace IT2166_Assignment.Models
 
         public DbSet<IT2166_Assignment.Models.ProjectRole> ProjectRole { get; set; }
         public DbSet<IT2166_Assignment.Models.Booking> Bookings { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+
     }
 }
