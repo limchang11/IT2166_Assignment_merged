@@ -15,8 +15,11 @@ using System.Data;
 using Microsoft.EntityFrameworkCore;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authorization;
+
 namespace IT2166_Assignment.Controllers
 {
+    [Authorize]
     public class Act2Controller : Controller
     {
         private readonly IWebHostEnvironment webHostEnvironment;

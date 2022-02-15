@@ -1,4 +1,5 @@
 ﻿using IT2166_Assignment.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace IT2166_Assignment.Controllers
 {
+    [Authorize]
     public class BookingController : Controller
     {
         private readonly AppDBContext _context;

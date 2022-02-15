@@ -42,7 +42,7 @@ namespace IT2166_Assignment
             //session timeout
             services.ConfigureApplicationCookie(options =>
             {
-                options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
                 options.SlidingExpiration = true;
                 options.LoginPath = "/Account/Login";
 
